@@ -26,6 +26,7 @@ async function convertCode() {
 
   setStatus('Converting...');
   convertBtn.disabled = true;
+  modeBadge.textContent = 'Working';
 
   try {
     const response = await fetch('/api/convert', {
@@ -35,13 +36,17 @@ async function convertCode() {
     });
 
     const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data?.error || 'Conversion request failed');
+    }
+
     pythonOutput.textContent = data.pythonCode || 'No output returned.';
     modeBadge.textContent = data.source === 'openai' ? 'OpenAI' : 'Fallback';
     setStatus(data.note || 'Conversion complete.');
   } catch (error) {
     pythonOutput.textContent = 'Conversion failed.';
     modeBadge.textContent = 'Error';
-    setStatus('Unable to contact the conversion endpoint.');
+    setStatus(error?.message || 'Unable to contact the conversion endpoint.');
   } finally {
     convertBtn.disabled = false;
   }
@@ -55,6 +60,7 @@ sampleBtn.addEventListener('click', () => {
 clearBtn.addEventListener('click', () => {
   perlInput.value = '';
   pythonOutput.textContent = 'Your converted code will appear here.';
+  modeBadge.textContent = 'Idle';
   setStatus('Input cleared.');
 });
 
