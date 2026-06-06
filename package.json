@@ -1,0 +1,19 @@
+{
+  "name": "perl-to-python-converter-web",
+  "version": "1.0.0",
+  "description": "A web-based Perl to Python converter with OpenAI support.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "perl",
+    "python",
+    "converter",
+    "openai",
+    "web-app"
+  ],
+  "author": "AI Assistant",
+  "license": "MIT"
+}

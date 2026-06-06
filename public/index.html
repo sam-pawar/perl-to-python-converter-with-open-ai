@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perl to Python Converter</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Web App • Math Friendly</p>
+        <h1>Perl to Python Converter</h1>
+        <p class="lead">
+          Paste Perl code, convert it to Python, and use it for math-heavy scripts or quick learning exercises.
+        </p>
+        <div class="tag-row">
+          <span>OpenAI-ready</span>
+          <span>Fallback converter</span>
+          <span>Simple web interface</span>
+        </div>
+      </section>
+
+      <section class="grid two-col">
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Perl input</h2>
+            <button id="sampleBtn" class="ghost-btn" type="button">Load math example</button>
+          </div>
+          <textarea id="perlInput" spellcheck="false">my $x = 10;\nmy $y = 5;\nmy $sum = $x + $y;\nprint \"Sum is $sum\";\n</textarea>
+          <div class="actions">
+            <button id="convertBtn" type="button">Convert to Python</button>
+            <button id="clearBtn" class="ghost-btn" type="button">Clear</button>
+          </div>
+          <p id="statusText" class="status">Ready to convert.</p>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Python output</h2>
+            <span class="badge" id="modeBadge">Fallback</span>
+          </div>
+          <pre id="pythonOutput">Your converted code will appear here.</pre>
+        </article>
+      </section>
+
+      <section class="panel examples-panel">
+        <h2>Quick examples</h2>
+        <div class="example-grid">
+          <article class="example-card">
+            <h3>Math</h3>
+            <pre>my $a = 12;
+my $b = 8;
+my $result = $a * $b;
+print "Result: $result";</pre>
+          </article>
+          <article class="example-card">
+            <h3>Loop</h3>
+            <pre>for (my $i = 0; $i < 5; $i++) {
+  print "$i\n";
+}</pre>
+          </article>
+          <article class="example-card">
+            <h3>Condition</h3>
+            <pre>if ($x > 0) {
+  print "Positive";
+}</pre>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
