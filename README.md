@@ -43,7 +43,6 @@ Run the built-in converter tests with:
 npm test
 ```
 
-## Notes
 
 - If `OPENAI_API_KEY` is not set or OpenAI conversion fails, the app uses the built-in fallback converter.
 - The fallback converter is intentionally simple and best for short Perl examples. It does not cover full Perl syntax, arrays, hashes, or regex-heavy code.
